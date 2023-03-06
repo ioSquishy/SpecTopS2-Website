@@ -1,5 +1,8 @@
 .body {
-    background-color: rgb(68, 68, 68);
+    background-image: url(../Assets/ram.png);
+    background-position: center center;
+    background-size: cover;
+    /*background-color: rgb(68, 68, 68);*/
     color: white;
 }
 
