@@ -1,11 +1,20 @@
 .body {
-    background-image: url(../Assets/ram.png);
+    /*background-image: url(../Assets/ram.png);
     background-position: center center;
-    background-size: cover;
-    /*background-color: rgb(68, 68, 68);*/
+    background-size:contain;
+    background-color: grey;
+    background-blend-mode: multiply;*/
+    background-color: rgb(219, 219, 219);
     color: white;
 }
 
 .pink-font {
     color: rgb(59, 174, 236);
+}
+
+.headerImg {
+    background-image: url(../Assets/header.jpg);
+    background-position: center center;
+    background-size: cover;
+    min-height: 500px;
 }
