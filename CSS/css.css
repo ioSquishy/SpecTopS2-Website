@@ -5,7 +5,7 @@
     background-color: grey;
     background-blend-mode: multiply;*/
     background-color: rgb(219, 219, 219);
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .pink-font {
@@ -17,4 +17,9 @@
     background-position: center center;
     background-size: cover;
     min-height: 500px;
+}
+
+.btn {
+    color: white;
+    background-color: rgb(208, 152, 218);
 }
