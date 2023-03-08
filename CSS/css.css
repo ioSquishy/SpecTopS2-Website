@@ -6,6 +6,7 @@
     background-blend-mode: multiply;*/
     background-color: rgb(219, 219, 219);
     color: rgb(0, 0, 0);
+    font-size: x-large;
 }
 
 .pink-font {
@@ -21,5 +22,10 @@
 
 .btn {
     color: white;
-    background-color: rgb(208, 152, 218);
+    background-color: rgb(71, 118, 198);
+}
+
+.btn:hover {
+    color: #ffffff;
+    background-color: #1165b9;
 }
