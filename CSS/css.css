@@ -1,9 +1,4 @@
 .body {
-    /*background-image: url(../Assets/ram.png);
-    background-position: center center;
-    background-size:contain;
-    background-color: grey;
-    background-blend-mode: multiply;*/
     background-color: rgb(219, 219, 219);
     color: rgb(0, 0, 0);
     font-size: x-large;
@@ -13,11 +8,21 @@
     color: rgb(59, 174, 236);
 }
 
+.header {
+    width: auto;  
+    text-align: center;
+    background-color: rgb(25, 29, 93);
+}
 .headerImg {
-    background-image: url(../Assets/header.jpg);
+     
+    /*background-image: url(../Assets/ogHeaderCropped.jpg);
     background-position: center center;
-    background-size: cover;
-    min-height: 500px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgb(25, 29, 93);
+    min-height: 500px;*/
+    max-width: 100%;
+    height: auto;  
 }
 
 .btn {
