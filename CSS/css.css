@@ -24,11 +24,3 @@
     color: #ffffff;
     background-color: #1165b9;
 }
-
-/* Address sizing and stuff */
-
-@media (max-width: 800px) {
-    .address {
-        text-align: center;
-    }
-}
