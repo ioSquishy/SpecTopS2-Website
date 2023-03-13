@@ -17,6 +17,7 @@
 /* Memoriam */
 .memoriamImg {
     background-size: cover;
+    background-position: bottom;
     background-image: url("../Assets/memoriam.jfif");
 }
 
