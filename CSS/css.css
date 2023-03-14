@@ -19,6 +19,9 @@
     background-size: cover;
     background-position: bottom;
     background-image: url("../Assets/memoriam.jfif");
+    background-blend-mode: multiply;
+    background-color: grey;
+    color: white;
 }
 
 /* Button customization */
@@ -29,4 +32,10 @@
 .btn:hover {
     color: #ffffff;
     background-color: #1165b9;
+}
+
+/* Form Stuff */
+.formBg {
+    background-color: white;
+    border-radius: 20px;
 }
