@@ -10,6 +10,7 @@
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS\css.css">  
+    <link rel="stylesheet" href="CSS\form.css">
   </head>
 
   <body class="body">
@@ -138,9 +139,42 @@
     <div class="container">
       <div class="row mb-5 my-auto mx-auto" style="text-align: center;">
         <div class="formBg">
-          <h1>Reservations</h1>
           <!-- ryan put ur code here -->
-          
+          <div class="form-box">
+            <h1 id="title">Reservations</h1>
+            <form>
+              <div class="input-group">
+                <div class="input-field" id="nameField">
+                  <i class="fa-solid fa-user"></i>
+                  <input type="text" placeholder="First Name">
+                </div>
+                <div class="input-field">
+                  <i class="fa-solid fa-envelope"></i>
+                  <input type="text" placeholder="Maiden Name">
+                </div>
+                <div class="input-field">
+                  <i class="fa-solid fa-lock"></i>
+                  <input type="email" placeholder="Email">
+                </div>
+                <div class="input-field">
+                  <i class="fa-solid fa-lock"></i>
+                  <input type="number" placeholder="Phone Number">
+                </div>
+                <div class="input-field">
+                  <i class="fa-solid fa-lock"></i>
+                  <input type="text" placeholder="Allergies">
+                </div>
+                <div class="input-field">
+                  <i class="fa-solid fa-lock"></i>
+                  <input type="text" placeholder="Additional Comments">
+                </div>
+              </div>
+                <div class="btn-field">
+                  <button type="button" id="signupBtn">Sign Up</button>
+                  <!-- <button type="button" id="signinBtn"class="disable">Sign In</button>-->
+                  </div>
+              </form>
+          </div>
         </div>
       </div>
     </div>
@@ -148,6 +182,14 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script>
+      let signupBtn = document.getElementById("signupBtn");
+     
+      let nameField = document.getElementById("nameField");
+      let title = document.getElementById("title");
+  
+    
+  </script>
   </body>
 
 </html>
