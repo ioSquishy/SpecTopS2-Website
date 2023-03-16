@@ -137,41 +137,62 @@
 
     <!-- Sign Up Form -->
     <div class="container">
-      <div class="row mb-5 my-auto mx-auto" style="text-align: center;">
+      <div class="row mb-5 my-auto mx-auto">
         <div class="formBg">
-          <!-- ryan put ur code here -->
-          <div class="form-box">
+          <div class="form-box py-5">
             <h1 id="title">Reservations</h1>
-            <form>
-              <div class="input-group">
-                <div class="input-field" id="nameField">
-                  <i class="fa-solid fa-user"></i>
-                  <input type="text" placeholder="First Name">
+            <form class="container-fluid">
+              <!-- Row 1 -->
+              <div class="row">
+                <!-- name -->
+                <div class="col-lg-5 mb-2 mx-auto" style="text-align: center;">
+                  <div class="input-field" id="nameField">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" placeholder="First Name">
+                  </div>
                 </div>
-                <div class="input-field">
-                  <i class="fa-solid fa-envelope"></i>
-                  <input type="text" placeholder="Maiden Name">
-                </div>
-                <div class="input-field">
-                  <i class="fa-solid fa-lock"></i>
-                  <input type="email" placeholder="Email">
-                </div>
-                <div class="input-field">
-                  <i class="fa-solid fa-lock"></i>
-                  <input type="text" placeholder="Phone Number">
-                </div>
-                <div class="input-field">
-                  <i class="fa-solid fa-lock"></i>
-                  <input type="text" placeholder="Allergies">
-                </div>
-                <div class="input-field">
-                  <i class="fa-solid fa-lock"></i>
-                  <input type="text" placeholder="Additional Comments">
+                <!-- maiden name -->
+                <div class="col-lg-5 mb-2 mx-auto">
+                  <div class="input-field">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="text" placeholder="Maiden Name">
+                  </div>
                 </div>
               </div>
-                <div class="btn-field">
-                  <button type="button" id="submitBtn">Submit</button>
+              <!-- Row 2 -->
+              <div class="row">
+                <!-- email -->
+                <div class="col-lg-5 mb-2 mx-auto">
+                  <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="email" placeholder="Email">
+                  </div>
                 </div>
+                <!-- phone -->
+                <div class="col-lg-5 mb-2 mx-auto">
+                  <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="text" placeholder="Phone Number">
+                  </div>
+                </div>
+              </div>
+              <!-- Row 3 -->
+              <div class="row">
+                <div class="col-11 mb-4 mx-auto">
+                  <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="text" placeholder="Allergies/Comments">
+                  </div>
+                </div>
+              </div>
+              <!-- Button -->
+              <div class="row">
+                <div class="col-11 mb-4 mx-auto">
+                  <div class="btn-field">
+                    <button type="button" id="submitBtn">Submit</button>
+                  </div>
+                </div>
+              </div>
             </form>
           </div>
         </div>
