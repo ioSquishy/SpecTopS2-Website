@@ -149,14 +149,14 @@
                 <div class="col-lg-5 mb-2 mx-auto" style="text-align: center;">
                   <div class="input-field" id="nameField">
                     <i class="fa-solid fa-user"></i>
-                    <input type="text" name="firstName" placeholder="First Name">
+                    <input type="text" name="firstName" placeholder="First Name" id="fName">
                   </div>
                 </div>
                 <!-- maiden name -->
                 <div class="col-lg-5 mb-2 mx-auto">
                   <div class="input-field">
                     <i class="fa-solid fa-envelope"></i>
-                    <input type="text" name="maidenName" placeholder="Maiden Name">
+                    <input type="text" name="maidenName" placeholder="Maiden Name" id="mName">
                   </div>
                 </div>
               </div>
@@ -166,14 +166,14 @@
                 <div class="col-lg-5 mb-2 mx-auto">
                   <div class="input-field">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="email" name="email" placeholder="Email">
+                    <input type="email" name="email" placeholder="Email" id="email">
                   </div>
                 </div>
                 <!-- phone -->
                 <div class="col-lg-5 mb-2 mx-auto">
                   <div class="input-field">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="tel" name="phone" placeholder="Phone Number">
+                    <input type="tel" name="phone" placeholder="Phone Number" id="number">
                   </div>
                 </div>
               </div>
@@ -182,7 +182,7 @@
                 <div class="col-11 mb-4 mx-auto">
                   <div class="input-field">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="text" name="extra" placeholder="Allergies/Comments">
+                    <input type="text" name="extra" placeholder="Allergies/Comments" id="comments">
                   </div>
                 </div>
               </div>
@@ -190,7 +190,7 @@
               <div class="row">
                 <div class="col-11 mb-4 mx-auto">
                   <div class="btn-field">
-                    <button type="button" id="submitBtn">Submit</button>
+                    <button type="button" id="submitBtn" onclick="submitForm()">Submit</button>
                   </div>
                 </div>
               </div>
@@ -203,7 +203,7 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="JavaScripts\form.js"></script>
+    <script src="Scripts\form.js"></script>
   </body>
 
 </html>
