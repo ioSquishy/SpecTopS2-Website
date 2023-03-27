@@ -39,3 +39,14 @@
     background-color: white;
     border-radius: 20px;
 }
+
+/* Responses */
+ul > li {
+    list-style: none;
+    display: inline-block;
+    margin-inline: 20px;
+}
+#container .item:not(:last-child):after {
+    border-right: 2px solid black;
+    width: 50%;
+}
