@@ -1,23 +1,20 @@
-const table = document.querySelector("#responseTableBody");
+const table = document.getElementById("responseTableBody");
 
 const testData1 = ["first name", "maiden name", "email", "phone", "comments"];
 const testData2 = ["first name2", "maiden name2", "email2", "phone2", "comments2"];
+const testData3 = ["first name3", "maiden name3", "email3", "phone3", "comments3"];
 
-const testData = [testData1, testData2];
+const testData = [testData1, testData2, testData3];
 
-function loadData(row) {
-  table.innerHTML += '<tr>';
-  row.forEach(updateTable);
-  table.innerHTML += '</tr>';
+
+function updateTable(row) {
+  var tr = table.insertRow(-1);
+  
+  for (let i = 0; i < row.length; i++) {
+    let td = tr.insertCell(i);
+    td.innerText = row[i];
+  }
 }
 
-function updateTable(col) {
-  table.innerHTML += '<td>' + col + '</td>';
-}
 
-function test() {
-  table.innerHtml += "<td>" + "test1" + "</td>" + "<td>" + "test2" + "</td>";
-}
-
-//Window.onload = test();
-Window.onload = testData.forEach(loadData);
+Window.onload = testData.forEach(updateTable);
