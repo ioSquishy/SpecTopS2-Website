@@ -1,10 +1,11 @@
 const table = document.getElementById("responseTableBody");
 
-const testData1 = ["first name", "maiden name", "email", "phone", "comments"];
-const testData2 = ["first name2", "maiden name2", "email2", "phone2", "comments2"];
-const testData3 = ["first name3", "maiden name3", "email3", "phone3", "comments3"];
+const testData1 = ["first name", "beeeeg maiden name", "email", "1231231234", "sus"];
+const testData2 = ["mid first name2", "beeeg maiden name2", "email2234523", "1231231243", "bonk"];
+const testData3 = ["longish first name3", "beeg maiden name3", "email4523", "1231231243", "eeeeeeeeeeeeeeeeeee"];
+const testData4 = ["extra long first name4", "beg maiden name4", "email42453452345", "1231231234", ""];
 
-const testData = [testData1, testData2, testData3];
+const testData = [testData1, testData2, testData3, testData4];
 
 
 function updateTable(row) {
