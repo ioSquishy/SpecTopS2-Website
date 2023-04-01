@@ -139,8 +139,8 @@
     <!-- Sign Up Form -->
     <div class="container">
       <div class="row mb-5 my-auto mx-auto">
-        <div class="whiteBg">
-          <div class="form-box py-5">
+        <div class="whiteBg" id="reservations-container">
+          <div class="form-box py-5" id="form-container">
             <h1 id="title">Reunion Reservations</h1>
             <form class="container-fluid" id="reservationForm" method="post" action="https://sheetdb.io/api/v1/tfs4ekwkf7ny6">
               <!-- Row 1 -->
@@ -196,6 +196,12 @@
               </div>
             </form>
           </div>
+          <!-- Successfully Submitted -->
+          <template>
+            <div class="success" style="text-align: center;">
+              <h1 class="py-5">Successfully Submitted!</h1>
+            </div>
+          </template>
         </div>
       </div>
     </div>
