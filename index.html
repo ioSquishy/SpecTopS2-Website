@@ -142,21 +142,21 @@
         <div class="whiteBg" id="reservations-container">
           <div class="form-box py-5" id="form-container">
             <h1 id="title">Reunion Reservations</h1>
-            <form class="container-fluid" id="reservationForm" method="post" action="https://sheetdb.io/api/v1/tfs4ekwkf7ny6">
+            <form class="container-fluid" id="reservationForm">
               <!-- Row 1 -->
               <div class="row">
                 <!-- name -->
                 <div class="col-lg-5 mb-2 mx-auto" style="text-align: center;">
                   <div class="input-field" id="nameField">
                     <i class="fa-solid fa-user"></i>
-                    <input type="text" name="data[First Name]" placeholder="First Name" id="fName">
+                    <input type="text" placeholder="First Name" id="fName">
                   </div>
                 </div>
                 <!-- maiden name -->
                 <div class="col-lg-5 mb-2 mx-auto">
                   <div class="input-field">
                     <i class="fa-solid fa-envelope"></i>
-                    <input type="text" name="data[Maiden Name]" placeholder="Maiden Name" id="mName">
+                    <input type="text" placeholder="Maiden Name" id="mName">
                   </div>
                 </div>
               </div>
@@ -166,14 +166,14 @@
                 <div class="col-lg-5 mb-2 mx-auto">
                   <div class="input-field">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="email" name="data[Email]" placeholder="Email" id="email">
+                    <input type="email" placeholder="Email" id="email">
                   </div>
                 </div>
                 <!-- phone -->
                 <div class="col-lg-5 mb-2 mx-auto">
                   <div class="input-field">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="tel" name="data[Phone]" placeholder="Phone Number" id="number">
+                    <input type="tel" placeholder="Phone Number" id="number">
                   </div>
                 </div>
               </div>
@@ -182,7 +182,7 @@
                 <div class="col-11 mb-4 mx-auto">
                   <div class="input-field">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="text" name="data[Comments]" placeholder="Allergies/Comments" id="comments">
+                    <input type="text" placeholder="Allergies/Comments" id="comments">
                   </div>
                 </div>
               </div>
@@ -190,7 +190,8 @@
               <div class="row">
                 <div class="col-11 mb-4 mx-auto">
                   <div class="btn-field">
-                    <button type="submit">Submit</button>
+                    <button type="button" onclick="checkForm()">Submit</button>
+                    <!--<button type="button" onclick="testSubmit()">Test Submit</button>-->
                   </div>
                 </div>
               </div>
