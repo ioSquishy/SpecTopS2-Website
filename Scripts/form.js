@@ -49,5 +49,10 @@ function checkForm() {
     formContainer.style.display = "none";
     let template = successTemplate.content.cloneNode(true);
     reservationsContainer.appendChild(template);
+    submitForm(firstName, maidenName, email, phone, comments);
   }
+}
+
+function submitForm(firstName, maidenName, email, phone, comments) {
+  alert(firstName + "\n" + maidenName + "\n" + email + "\n" + phone + "\n" + comments);
 }
