@@ -24,18 +24,13 @@
     color: white;
 }
 
-/* Button customization */
-.btn {
-    color: white;
-    background-color: rgb(71, 118, 198);
-}
-.btn:hover {
-    color: #ffffff;
-    background-color: #1165b9;
-}
-
 /* Form Stuff */
 .whiteBg {
     background-color: white;
     border-radius: 20px;
+}
+
+/* Form Success Stuff */
+.success h1 {
+    color: #3c00a0;
 }
