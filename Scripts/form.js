@@ -22,18 +22,26 @@ function checkForm() {
   if (!firstName) {
     document.getElementById("fNameField").style.backgroundColor = "rgb(255, 205, 205)";
     valid = false;
+  } else {
+    document.getElementById("fNameField").style.backgroundColor = "#eaeaea";
   }
   if (!maidenName) {
     document.getElementById("mNameField").style.backgroundColor = "rgb(255, 205, 205)";
     valid = false;
+  } else {
+    document.getElementById("mNameField").style.backgroundColor = "#eaeaea";
   }
   if (!validateEmail(email)) {
     document.getElementById("emailField").style.backgroundColor = "rgb(255, 205, 205)";
     valid = false;
+  } else {
+    document.getElementById("emailField").style.backgroundColor = "#eaeaea";
   }
   if (!phone) {
     document.getElementById("phoneField").style.backgroundColor = "rgb(255, 205, 205)";
     valid = false;
+  } else {
+    document.getElementById("phoneField").style.backgroundColor = "#eaeaea";
   }
 
   /* If all fields are valid and present, submits the form. */
