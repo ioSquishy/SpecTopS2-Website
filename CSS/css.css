@@ -29,25 +29,6 @@
     background-color: white;
     border-radius: 20px;
 }
-.form-control {
-    color: #555;
-    background-color: inherit;
-    width: 100vw;
-    margin-bottom: 14px;
-    font-size: large;
-    translate: -3px;
-    border: none;
-}
-.form-control:focus {
-    color: #555;
-    background-color: inherit;
-    outline: none;
-    box-shadow: none;
-}
-.floating-label-form-group label.floating-label {
-    font-size: 5px;
-}
-  
 
 /* Form Success Stuff */
 .success h1 {
