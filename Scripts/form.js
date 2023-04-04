@@ -80,25 +80,31 @@ function testSubmit() {
   if (!firstName) {
     document.getElementById("fNameField").style.backgroundColor = "rgb(255, 205, 205)";
     valid = false;
+  } else {
+    document.getElementById("fNameField").style.backgroundColor = "#eaeaea";
   }
   if (!maidenName) {
     document.getElementById("mNameField").style.backgroundColor = "rgb(255, 205, 205)";
     valid = false;
+  } else {
+    document.getElementById("mNameField").style.backgroundColor = "#eaeaea";
   }
   if (!validateEmail(email)) {
     document.getElementById("emailField").style.backgroundColor = "rgb(255, 205, 205)";
     valid = false;
+  } else {
+    document.getElementById("emailField").style.backgroundColor = "#eaeaea";
   }
   if (!phone) {
     document.getElementById("phoneField").style.backgroundColor = "rgb(255, 205, 205)";
     valid = false;
+  } else {
+    document.getElementById("phoneField").style.backgroundColor = "#eaeaea";
   }
 
   if (valid) {
     formContainer.style.display = "none";
     let template = successTemplate.content.cloneNode(true);
     reservationsContainer.appendChild(template);
-  } else {
-    alert(":(");
   }
 }
