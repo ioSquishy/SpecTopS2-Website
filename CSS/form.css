@@ -28,7 +28,27 @@
     transition: max-height 0.5s;
     overflow: hidden;
 }
+.long-input-field {
+    background: #eaeaea;
+    margin: 15px 0;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+textarea{
+    background: none;
+    border: none;
+    outline: none;
+    width: 100vw;
+    min-height: 65px;
+    height: 65px;
+    padding-inline: 10px;
+    margin-left: 10px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
 input{
+    margin-left: 10px;
     width: 100%;
     background: transparent;
     border: 0;
