@@ -50,6 +50,7 @@ function checkForm() {
 
   /* If all fields are valid and present, submits the form. */
   if (valid) {
+    /* Attempts to submit form through API, if it fails then will switch to an embed of a google form. */
     if (!submitForm(firstName, maidenName, email, phone, comments)) {
       tryCount+=1;
       if (tryCount >= 2) {
@@ -60,10 +61,12 @@ function checkForm() {
       useFormEmbed();
       return;
     }
+    /* If API successful, shows success message. */
     formContainer.style.display = "none";
     let template = successTemplate.content.cloneNode(true);
     reservationsContainer.appendChild(template);
   } else {
+    /* If user enterse data incorrectly or not at all, highlights the input in red. */
     tryCount+=1;
     if (tryCount >= 2) {
       let template = formNotWorkingTemplate.content.cloneNode(true);
@@ -72,6 +75,7 @@ function checkForm() {
   }
 }
 
+/* Uses SheetsDB API to add responses to a google sheet */
 function submitForm(firstName, maidenName, email, phone, comments) {
   fetch('https://sheetdb.io/api/v1/tfs4ekwkf7ny6?sheet=responses', {
     method: 'POST',
@@ -100,12 +104,15 @@ function submitForm(firstName, maidenName, email, phone, comments) {
   return true;
 }
 
+/* Enabled a template to use google sheets embed instead of custom form. */
 function useFormEmbed() {
   formContainer.style.display = "none";
   let template = formEmbedTemplate.content.cloneNode(true);
   reservationsContainer.appendChild(template);
 }
 
+
+/* Testing */
 function testSubmit() {
   var firstName = document.getElementById("fName").value;
   var maidenName = document.getElementById("mName").value;
