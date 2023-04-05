@@ -1,6 +1,10 @@
 const formContainer = document.getElementById('form-container');
 const reservationsContainer = document.getElementById('reservations-container');
-const successTemplate = document.getElementsByTagName("template")[0];
+const successTemplate = document.getElementById("successTemplate");
+const formEmbedTemplate = document.getElementById("formEmbedTemplate");
+const formNotWorkingTemplate = document.getElementById("formNotWorkingTemplate");
+
+var tryCount = 0;
 
 const validateEmail = (email) => {
   return email.match(
@@ -46,15 +50,30 @@ function checkForm() {
 
   /* If all fields are valid and present, submits the form. */
   if (valid) {
-    submitForm(firstName, maidenName, email, phone, comments);
+    if (!submitForm(firstName, maidenName, email, phone, comments)) {
+      tryCount+=1;
+      if (tryCount >= 2) {
+        let template = formNotWorkingTemplate.content.cloneNode(true);
+        formContainer.appendChild(template)
+      }
+      alert("Something went wrong! Please fill out this alternative form.")
+      useFormEmbed();
+      return;
+    }
     formContainer.style.display = "none";
     let template = successTemplate.content.cloneNode(true);
     reservationsContainer.appendChild(template);
+  } else {
+    tryCount+=1;
+    if (tryCount >= 2) {
+      let template = formNotWorkingTemplate.content.cloneNode(true);
+      formContainer.appendChild(template)
+    }
   }
 }
 
 function submitForm(firstName, maidenName, email, phone, comments) {
-  fetch('https://sheetdb.io/api/v1/tfs4ekwkf7ny6', {
+  fetch('https://sheetdb.io/api/v1/tfs4ekwkf7ny6?sheet=responses', {
     method: 'POST',
     headers: {
         'Accept': 'application/json',
@@ -66,14 +85,25 @@ function submitForm(firstName, maidenName, email, phone, comments) {
                 'First Name': firstName,
                 'Maiden Name': maidenName,
                 'Email': email,
-                'Phone' : phone,
-                'Comments' : comments
+                'Phone Number' : phone,
+                'Allergies/Comments' : comments
             }
         ]
     })
 })
-  .then((response) => response.json())
+  .then((response) => {
+    if (!response.ok) {
+      return false;
+    }
+  })
   .then((data) => console.log(data));
+  return true;
+}
+
+function useFormEmbed() {
+  formContainer.style.display = "none";
+  let template = formEmbedTemplate.content.cloneNode(true);
+  reservationsContainer.appendChild(template);
 }
 
 function testSubmit() {
@@ -114,5 +144,11 @@ function testSubmit() {
     formContainer.style.display = "none";
     let template = successTemplate.content.cloneNode(true);
     reservationsContainer.appendChild(template);
+  } else {
+    tryCount+=1;
+    if (tryCount >= 2) {
+      let template = formNotWorkingTemplate.content.cloneNode(true);
+      formContainer.appendChild(template)
+    }
   }
 }
