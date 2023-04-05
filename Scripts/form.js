@@ -5,6 +5,7 @@ const formEmbedTemplate = document.getElementById("formEmbedTemplate");
 const formNotWorkingTemplate = document.getElementById("formNotWorkingTemplate");
 
 var tryCount = 0;
+var tryThreshold = 2;
 
 const validateEmail = (email) => {
   return email.match(
@@ -53,7 +54,7 @@ function checkForm() {
     /* Attempts to submit form through API, if it fails then will switch to an embed of a google form. */
     if (!submitForm(firstName, maidenName, email, phone, comments)) {
       tryCount+=1;
-      if (tryCount >= 2) {
+      if (tryCount >= tryThreshold) {
         let template = formNotWorkingTemplate.content.cloneNode(true);
         formContainer.appendChild(template)
       }
@@ -68,7 +69,7 @@ function checkForm() {
   } else {
     /* If user enterse data incorrectly or not at all, highlights the input in red. */
     tryCount+=1;
-    if (tryCount >= 2) {
+    if (tryCount >= tryThreshold) {
       let template = formNotWorkingTemplate.content.cloneNode(true);
       formContainer.appendChild(template)
     }
@@ -153,7 +154,7 @@ function testSubmit() {
     reservationsContainer.appendChild(template);
   } else {
     tryCount+=1;
-    if (tryCount >= 2) {
+    if (tryCount >= tryThreshold) {
       let template = formNotWorkingTemplate.content.cloneNode(true);
       formContainer.appendChild(template)
     }
