@@ -17,6 +17,7 @@ function checkForm() {
   /* Get Values of Form */
   var firstName = document.getElementById("fName").value;
   var maidenName = document.getElementById("mName").value;
+  var lastName = document.getElementById("lName").value;
   var email = document.getElementById("email").value;
   var phone = document.getElementById("phone").value;
   var comments = document.getElementById("comments").value;
@@ -36,6 +37,12 @@ function checkForm() {
   } else {
     document.getElementById("mNameField").style.backgroundColor = "#eaeaea";
   }
+  if (!lastName) {
+    document.getElementById("lNameField").style.backgroundColor = "rgb(255, 205, 205)";
+    valid = false;
+  } else {
+    document.getElementById("lNameField").style.backgroundColor = "#eaeaea";
+  }
   if (!validateEmail(email)) {
     document.getElementById("emailField").style.backgroundColor = "rgb(255, 205, 205)";
     valid = false;
@@ -48,11 +55,12 @@ function checkForm() {
   } else {
     document.getElementById("phoneField").style.backgroundColor = "#eaeaea";
   }
+  
 
   /* If all fields are valid and present, submits the form. */
   if (valid) {
     /* Attempts to submit form through API, if it fails then will switch to an embed of a google form. */
-    if (!submitForm(firstName, maidenName, email, phone, comments)) {
+    if (!submitForm(firstName, maidenName, lastName, email, phone, comments)) {
       tryCount+=1;
       if (tryCount >= tryThreshold) {
         let template = formNotWorkingTemplate.content.cloneNode(true);
@@ -77,7 +85,7 @@ function checkForm() {
 }
 
 /* Uses SheetsDB API to add responses to a google sheet */
-function submitForm(firstName, maidenName, email, phone, comments) {
+function submitForm(firstName, maidenName, lastName, email, phone, comments) {
   fetch('https://sheetdb.io/api/v1/tfs4ekwkf7ny6?sheet=responses', {
     method: 'POST',
     headers: {
@@ -89,6 +97,7 @@ function submitForm(firstName, maidenName, email, phone, comments) {
             {
                 'First Name': firstName,
                 'Maiden Name': maidenName,
+                'Last Name': lastName,
                 'Email': email,
                 'Phone Number' : phone,
                 'Allergies/Comments' : comments
