@@ -24,11 +24,15 @@ public class sort {
         
         int cols = 4;
         int namesPerCol = names.size() / cols;
-        System.out.println(namesPerCol);
         for (int i = 0; i < names.size(); i++) {
-            if (i % namesPerCol == 0) {
+            
+            if (i > 0 && i % namesPerCol == 0) {
                 System.out.println(names.get(i).toString());
+                System.out.println();
+            } else {
+                System.out.println(names.get(i).toString() + "<br>");
             }
+
         }
         
     }
