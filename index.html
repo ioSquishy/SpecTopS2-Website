@@ -45,7 +45,7 @@
           <div class="row mb-5 my-auto mx-auto">
             <p><strong>Ticket Price <em>$73.00</em></strong></p>
             <br>
-            <p>Checks should be made out to Wilson H.S. & mailed to:<strong><br>Wilson H.S.<br>c/o Lori Rohrs<br>2522 North Proctor Street #317<br>Tacoma, WA. 98406</strong></p>
+            <p>Checks should be made out to Wilson 1973 Reunion & mailed to Wilson H.S.:<strong><br>Wilson H.S.<br>c/o Lori Rohrs<br>2522 North Proctor Street #317<br>Tacoma, WA. 98406</strong></p>
             <br><br>
             <p>Remember to also include your maiden name.</p>
           </div>
@@ -63,6 +63,100 @@
         </div>
     </div>
     <!-- End Information -->
+
+    <!-- Sign Up Form -->
+    <div class="container">
+      <div class="row mb-5 my-auto mx-auto">
+        <div class="whiteBg" id="reservations-container">
+          <div class="form-box py-5" id="form-container">
+            <h1 id="title">Reunion Reservations</h1>
+            <form class="container-fluid" id="reservationForm">
+              <!-- Row 1 -->
+              <div class="row">
+                <!-- name -->
+                <div class="col-lg-5 mb-2 mx-auto">
+                  <div class="input-field" id="fNameField">
+                    <input type="text" placeholder="First Name" id="fName">
+                  </div>
+                </div>
+                <!-- last name -->
+                <div class="col-lg-5 mb-2 mx-auto">
+                  <div class="input-field" id="lNameField">
+                    <input type="text" placeholder="Last Name" id="lName">
+                  </div>
+                </div>
+                
+              </div>
+              <!-- Row 2 -->
+              <div class="row">
+                
+                <!-- maiden name -->
+                <div class="col-lg-5 mb-2 mx-auto">
+                  <div class="input-field" id="mNameField">
+                    <input type="text" placeholder="Maiden Name" id="mName">
+                  </div>
+                </div>
+                <!-- email -->
+                <div class="col-lg-5 mb-2 mx-auto">
+                  <div class="input-field" id="emailField">
+                    <input type="email" placeholder="Email" id="email">
+                  </div>
+                </div>
+              </div>
+              <!-- Row 3 -->
+              <div class="row">
+                <!-- phone -->
+                <div class="col-lg-5 mb-2 mx-auto">
+                  <div class="input-field" id="phoneField">
+                    <input type="tel" placeholder="Phone Number" id="phone">
+                  </div>
+                </div>
+                <!-- comments 
+                <div class="col-5 mb-2 mx-auto">
+                  <div class="long-input-field">
+                    <textarea placeholder="Comments" id="comments"></textarea>
+                  </div>
+                </div>-->
+              </div>
+              <!-- Button -->
+              <div class="row">
+                <div class="col-11 mb-3 mx-auto">
+                  <div class="btn-field">
+                    <button type="button" onclick="checkForm()">Submit</button>
+                    <!--<button type="button" onclick="testSubmit()">Test Submit</button>-->
+                  </div>
+                </div>
+              </div>
+              <!-- Adds button to switch to goolge sheets embed if something is not working after 2 attempts to submit -->
+              <template id="formNotWorkingTemplate">
+                <div class="row mt-0 mb-0">
+                  <div class="problemButton">
+                    <button class="btn" type="button" onclick="useFormEmbed()">Form not working?</button>
+                  </div>
+                </div>
+              </template>
+            </form>
+          </div>
+          <!-- Successfully Submitted -->
+          <template id="successTemplate">
+            <div class="success" style="text-align: center;">
+              <h1 class="py-5">Reservation Submitted!</h1>
+            </div>
+          </template>
+          <!-- Google Forms Embed (for backup) -->
+          <template id="formEmbedTemplate">
+            <div class="formEmbed" style="text-align: center;">
+              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdzmfrzFjc0P7Jh_IeSsx3JDt5tk_zX43FTUUPJTu7iVn9qZw/viewform?embedded=true" width="100%" height="1205px" frameborder="0" marginheight="0" marginwidth="0">Loading Form…</iframe>
+            </div>
+          </template>
+        </div>
+      </div>
+    </div>
+    <!-- End Sign Up Form -->
+
+    <!-- Activities -->
+
+    <!-- End Activities -->
 
     <!-- Memoriam -->
     <div class="container-fluid my-5 memoriamImg">
@@ -141,95 +235,6 @@
       </div>
     </div>
     <!-- End Memoriam -->
-
-
-    <!-- Sign Up Form -->
-    <div class="container">
-      <div class="row mb-5 my-auto mx-auto">
-        <div class="whiteBg" id="reservations-container">
-          <div class="form-box py-5" id="form-container">
-            <h1 id="title">Reunion Reservations</h1>
-            <form class="container-fluid" id="reservationForm">
-              <!-- Row 1 -->
-              <div class="row">
-                <!-- name -->
-                <div class="col-lg-5 mb-2 mx-auto">
-                  <div class="input-field" id="fNameField">
-                    <input type="text" placeholder="First Name" id="fName">
-                  </div>
-                </div>
-                <!-- email -->
-                <div class="col-lg-5 mb-2 mx-auto">
-                  <div class="input-field" id="emailField">
-                    <input type="email" placeholder="Email" id="email">
-                  </div>
-                </div>
-              </div>
-              <!-- Row 2 -->
-              <div class="row">
-                <!-- maiden name -->
-                <div class="col-lg-5 mb-2 mx-auto">
-                  <div class="input-field" id="mNameField">
-                    <input type="text" placeholder="Maiden Name" id="mName">
-                  </div>
-                </div>
-                <!-- phone -->
-                <div class="col-lg-5 mb-2 mx-auto">
-                  <div class="input-field" id="phoneField">
-                    <input type="tel" placeholder="Phone Number" id="phone">
-                  </div>
-                </div>
-              </div>
-              <!-- Row 3 -->
-              <div class="row">
-                <!-- last name -->
-                <div class="col-lg-5 mb-2 mx-auto">
-                  <div class="input-field" id="lNameField">
-                    <input type="text" placeholder="Last Name" id="lName">
-                  </div>
-                </div>
-                <!-- allergies/comments -->
-                <div class="col-5 mb-2 mx-auto">
-                  <div class="long-input-field">
-                    <textarea placeholder="Allergies/Comments" id="comments"></textarea>
-                  </div>
-                </div>
-              </div>
-              <!-- Button -->
-              <div class="row">
-                <div class="col-11 mb-3 mx-auto">
-                  <div class="btn-field">
-                    <button type="button" onclick="checkForm()">Submit</button>
-                    <!--<button type="button" onclick="testSubmit()">Test Submit</button>-->
-                  </div>
-                </div>
-              </div>
-              <!-- Adds button to switch to goolge sheets embed if something is not working after 2 attempts to submit -->
-              <template id="formNotWorkingTemplate">
-                <div class="row mt-0 mb-0">
-                  <div class="problemButton">
-                    <button class="btn" type="button" onclick="useFormEmbed()">Form not working?</button>
-                  </div>
-                </div>
-              </template>
-            </form>
-          </div>
-          <!-- Successfully Submitted -->
-          <template id="successTemplate">
-            <div class="success" style="text-align: center;">
-              <h1 class="py-5">Reservation Submitted!</h1>
-            </div>
-          </template>
-          <!-- Google Forms Embed (for backup) -->
-          <template id="formEmbedTemplate">
-            <div class="formEmbed" style="text-align: center;">
-              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdzmfrzFjc0P7Jh_IeSsx3JDt5tk_zX43FTUUPJTu7iVn9qZw/viewform?embedded=true" width="100%" height="1205px" frameborder="0" marginheight="0" marginwidth="0">Loading Form…</iframe>
-            </div>
-          </template>
-        </div>
-      </div>
-    </div>
-    <!-- End Sign Up Form -->
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
