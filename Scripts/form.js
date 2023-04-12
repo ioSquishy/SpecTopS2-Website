@@ -59,7 +59,7 @@ function checkForm() {
   /* If all fields are valid and present, submits the form. */
   if (valid) {
     /* Attempts to submit form through API, if it fails then will switch to an embed of a google form. */
-    if (!submitForm(firstName, maidenName, lastName, email, phone, comments)) {
+    if (!submitForm(firstName, maidenName, lastName, email, phone)) {
       tryCount+=1;
       if (tryCount >= tryThreshold) {
         let template = formNotWorkingTemplate.content.cloneNode(true);
