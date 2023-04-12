@@ -9,7 +9,6 @@
     width: auto;
     text-align: center;
     background-color: rgb(25, 29, 93);
-    overflow-x: hidden;
 }
 .headerImg {
     max-width: 100%;
