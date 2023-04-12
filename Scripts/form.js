@@ -20,7 +20,6 @@ function checkForm() {
   var lastName = document.getElementById("lName").value;
   var email = document.getElementById("email").value;
   var phone = document.getElementById("phone").value;
-  var comments = document.getElementById("comments").value;
 
   /* Check if values are present and highlights invalid fields. */
   var valid = true;
@@ -85,7 +84,7 @@ function checkForm() {
 }
 
 /* Uses SheetsDB API to add responses to a google sheet */
-function submitForm(firstName, maidenName, lastName, email, phone, comments) {
+function submitForm(firstName, maidenName, lastName, email, phone) {
   fetch('https://sheetdb.io/api/v1/tfs4ekwkf7ny6?sheet=responses', {
     method: 'POST',
     headers: {
@@ -99,8 +98,7 @@ function submitForm(firstName, maidenName, lastName, email, phone, comments) {
                 'Maiden Name': maidenName,
                 'Last Name': lastName,
                 'Email': email,
-                'Phone Number' : phone,
-                'Allergies/Comments' : comments
+                'Phone Number' : phone
             }
         ]
     })
