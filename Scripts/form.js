@@ -30,12 +30,6 @@ function checkForm() {
   } else {
     document.getElementById("fNameField").style.backgroundColor = "#eaeaea";
   }
-  if (!maidenName) {
-    document.getElementById("mNameField").style.backgroundColor = "rgb(255, 205, 205)";
-    valid = false;
-  } else {
-    document.getElementById("mNameField").style.backgroundColor = "#eaeaea";
-  }
   if (!lastName) {
     document.getElementById("lNameField").style.backgroundColor = "rgb(255, 205, 205)";
     valid = false;
