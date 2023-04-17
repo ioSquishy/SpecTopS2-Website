@@ -14,7 +14,7 @@ public class sort {
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
             String[] parts = line.split("\\s+"); // split by whitespace
-            if (parts.length == 2) { // expect first and last name
+            if (parts.length == 2) { 
                 Name name = new Name(parts[0], parts[1]);
                 names.add(name);
             }
@@ -34,7 +34,6 @@ public class sort {
             }
 
         }
-        
     }
     
     static class Name {
