@@ -2,11 +2,12 @@
     background-color: rgb(219, 219, 219);
     color: rgb(0, 0, 0);
     font-size: x-large;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
 }
 
 /* Image at the top */
 .header {
-    width: auto;  
     text-align: center;
     background-color: rgb(25, 29, 93);
 }
@@ -34,3 +35,28 @@
 .success h1 {
     color: #3c00a0;
 }
+
+/* Activites */
+.activity {
+    background-color: rgb(248, 248, 248);
+    border-radius: 20px;
+    border-color: #3c00a0;
+    border-style:dashed;
+}
+.activity h4 {
+    color:#3c00a0;
+}
+.activity h5 {
+    color: #847898;
+}
+.activity p {
+    margin-top: 25px;
+    font-size: large;
+}
+
+/* ghost debugging 
+* {
+    background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;
+} */
