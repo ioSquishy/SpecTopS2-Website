@@ -59,10 +59,11 @@ const names = [
   "Rand Chiarovano",
   "Richard Mead",
   "Ramonda Revis",
-  "Kaare Gimge",
+  "Kaare Gimse",
   "Lyle Pratt",
   "Joe Jackson",
-  "Dorinda Klug"]
+  "Dorinda Klug",
+  "Roxann Russell"]
 
 var list1 = document.getElementById("namesList1");
 var list2 = document.getElementById("namesList2");
