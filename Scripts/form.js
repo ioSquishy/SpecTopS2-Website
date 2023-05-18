@@ -5,7 +5,7 @@ const formEmbedTemplate = document.getElementById("formEmbedTemplate");
 const formNotWorkingTemplate = document.getElementById("formNotWorkingTemplate");
 
 var tryCount = 0;
-var tryThreshold = 2;
+var tryThreshold = 5;
 
 const validateEmail = (email) => {
   return email.match(
