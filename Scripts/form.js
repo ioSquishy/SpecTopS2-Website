@@ -13,6 +13,12 @@ const validateEmail = (email) => {
   );
 };
 
+const validatePhone = (phone) => {
+  return phone.match(
+    /(^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$)/
+  );
+};
+
 function checkForm() {
   /* Get Values of Form */
   var firstName = document.getElementById("fName").value;
@@ -42,7 +48,7 @@ function checkForm() {
   } else {
     document.getElementById("emailField").style.backgroundColor = "#eaeaea";
   }
-  if (!phone) {
+  if (!validatePhone(phone)) {
     document.getElementById("phoneField").style.backgroundColor = "rgb(255, 205, 205)";
     valid = false;
   } else {
