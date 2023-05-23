@@ -5,11 +5,17 @@ const formEmbedTemplate = document.getElementById("formEmbedTemplate");
 const formNotWorkingTemplate = document.getElementById("formNotWorkingTemplate");
 
 var tryCount = 0;
-var tryThreshold = 2;
+var tryThreshold = 5;
 
 const validateEmail = (email) => {
   return email.match(
     /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  );
+};
+
+const validatePhone = (phone) => {
+  return phone.match(
+    /(^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$)/
   );
 };
 
@@ -42,7 +48,7 @@ function checkForm() {
   } else {
     document.getElementById("emailField").style.backgroundColor = "#eaeaea";
   }
-  if (!phone) {
+  if (!validatePhone(phone)) {
     document.getElementById("phoneField").style.backgroundColor = "rgb(255, 205, 205)";
     valid = false;
   } else {
