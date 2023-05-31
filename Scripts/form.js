@@ -5,17 +5,12 @@ const formEmbedTemplate = document.getElementById("formEmbedTemplate");
 const formNotWorkingTemplate = document.getElementById("formNotWorkingTemplate");
 
 var tryCount = 0;
-var tryThreshold = 5;
+var tryThreshold = 3;
+var formNotWorkingDisplayed = false;
 
 const validateEmail = (email) => {
   return email.match(
     /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-  );
-};
-
-const validatePhone = (phone) => {
-  return phone.match(
-    /(^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$)/
   );
 };
 
@@ -45,10 +40,11 @@ function checkForm() {
   if (!validateEmail(email)) {
     document.getElementById("emailField").style.backgroundColor = "rgb(255, 205, 205)";
     valid = false;
+    alert("Please enter a valid email!");
   } else {
     document.getElementById("emailField").style.backgroundColor = "#eaeaea";
   }
-  if (!validatePhone(phone)) {
+  if (!phone) {
     document.getElementById("phoneField").style.backgroundColor = "rgb(255, 205, 205)";
     valid = false;
   } else {
@@ -61,9 +57,10 @@ function checkForm() {
     /* Attempts to submit form through API, if it fails then will switch to an embed of a google form. */
     if (!submitForm(firstName, maidenName, lastName, email, phone)) {
       tryCount+=1;
-      if (tryCount >= tryThreshold) {
+      if (!formNotWorkingDisplayed && tryCount >= tryThreshold) {
         let template = formNotWorkingTemplate.content.cloneNode(true);
         formContainer.appendChild(template)
+        formNotWorkingDisplayed = true;
       }
       alert("Something went wrong! Please fill out this alternative form.")
       useFormEmbed();
@@ -76,9 +73,10 @@ function checkForm() {
   } else {
     /* If user enterse data incorrectly or not at all, highlights the input in red. */
     tryCount+=1;
-    if (tryCount >= tryThreshold) {
+    if (!formNotWorkingDisplayed && tryCount >= tryThreshold) {
       let template = formNotWorkingTemplate.content.cloneNode(true);
       formContainer.appendChild(template)
+      formNotWorkingDisplayed = true;
     }
   }
 }
