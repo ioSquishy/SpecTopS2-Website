@@ -1,4 +1,6 @@
 const names = [
+  "Carol Atkinson",
+  "Richard Barronian",
   "Daryl Anderson",
   "Sherrie Barrick",
   "Joe Bell",
@@ -59,7 +61,7 @@ const names = [
   "Jackie Bjorkman",
   "Rand Chiarovano",
   "Richard Mead",
-  "Ramonda Revis",
+  "Ramona Revis",
   "Kaare Gimse",
   "Lyle Pratt",
   "Joe Jackson",
