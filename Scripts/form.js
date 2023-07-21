@@ -77,11 +77,33 @@ function checkForm() {
   }
 }
 
-/* Submits form to SQL database */
-function submitForm(firstName, maidenName, lastName, email, phone) {
-  alert(":0");
 
-  //return true if successful
+/* Uses SheetsDB API to add responses to a google sheet */
+function submitForm(firstName, maidenName, lastName, email, phone) {
+  fetch('https://sheetdb.io/api/v1/tfs4ekwkf7ny6?sheet=responses', {
+    method: 'POST',
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        data: [
+            {
+                'First Name': firstName,
+                'Maiden Name': maidenName,
+                'Last Name': lastName,
+                'Email': email,
+                'Phone Number' : phone
+            }
+        ]
+    })
+})
+  .then((response) => {
+    if (!response.ok) {
+      return false;
+    }
+  })
+  .then((data) => console.log(data));
   return true;
 }
 
