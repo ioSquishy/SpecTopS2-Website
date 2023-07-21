@@ -77,6 +77,7 @@ function checkForm() {
   }
 }
 
+
 /* Uses SheetsDB API to add responses to a google sheet */
 function submitForm(firstName, maidenName, lastName, email, phone) {
   fetch('https://sheetdb.io/api/v1/tfs4ekwkf7ny6?sheet=responses', {
