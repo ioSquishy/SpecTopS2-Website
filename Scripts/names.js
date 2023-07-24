@@ -1,4 +1,4 @@
-const names = [
+const backupNames = [
   "Linda Hailey",
   "Gary Pape",
   "Carol Atkinson",
@@ -70,33 +70,52 @@ const names = [
   "Dorinda Klug",
   "Roxann Russell"]
 
-var list1 = document.getElementById("namesList1");
-var list2 = document.getElementById("namesList2");
-var list3 = document.getElementById("namesList3");
-var list4 = document.getElementById("namesList4");
+async function getNames() {
+  var encodedFieldName = encodeURIComponent("Last Name");
+  try {
+    const response = await fetch('https://sheetdb.io/api/v1/m2c7w7xcwn3r0?sort_by=' + encodedFieldName + '&sort_order=asc');
+    const data = await response.json();
+    const initNames = [];
 
-//sort alphabetically
-names.sort(function(a, b) {
-  const aLastName = a.split(" ")[1];
-  const bLastName = b.split(" ")[1];
-  return aLastName.localeCompare(bLastName);
-});
+    for (let nameIndex in data) {
+      let rawName = data[nameIndex];
+      let fullName = rawName['First Name'] + ' ' + rawName['Last Name'];
+      initNames.push(fullName);
+    }
 
-var cols = 4;
-var namesPerCol = (names.length / cols).toFixed(0);
-//first col
-for (let i = 0; i < namesPerCol; i++) {
-  list1.innerHTML += names[i] + "<br>";
+    return initNames;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return backupNames;
+  }
 }
-//second col
-for (let i = namesPerCol; i < namesPerCol*2; i++) {
-  list2.innerHTML += names[i] + "<br>";
+
+async function displayNames() {
+  const names = await getNames();
+
+  var list1 = document.getElementById("namesList1");
+  var list2 = document.getElementById("namesList2");
+  var list3 = document.getElementById("namesList3");
+  var list4 = document.getElementById("namesList4");
+
+  var cols = 4;
+  var namesPerCol = (names.length / cols).toFixed(0);
+  //first col
+  for (let i = 0; i < namesPerCol; i++) {
+    list1.innerHTML += names[i] + "<br>";
+  }
+  //second col
+  for (let i = namesPerCol; i < namesPerCol*2; i++) {
+    list2.innerHTML += names[i] + "<br>";
+  }
+  //third col
+  for (let i = namesPerCol*2; i < namesPerCol*3; i++) {
+    list3.innerHTML += names[i] + "<br>";
+  }
+  //fourth col
+  for (let i = namesPerCol*3; i < names.length; i++) {
+    list4.innerHTML += names[i] + "<br>";
+  }
 }
-//third col
-for (let i = namesPerCol*2; i < namesPerCol*3; i++) {
-  list3.innerHTML += names[i] + "<br>";
-}
-//fourth col
-for (let i = namesPerCol*3; i < names.length; i++) {
-  list4.innerHTML += names[i] + "<br>";
-}
+
+window.onload = displayNames;

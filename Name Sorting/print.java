@@ -7,7 +7,8 @@ public class print {
     Scanner scanner = new Scanner(new File("Name Sorting/names.txt"));
     
     while (scanner.hasNextLine()) {
-      System.out.print('"' + scanner.nextLine()+ "\", ");
+      String[] name = scanner.nextLine().split("\\s+");
+      System.out.println("\"" + name[0] + " " + name[0] + "\",");
     }
   }
 }
