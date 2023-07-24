@@ -14,6 +14,7 @@ async function getGoogleapiNames() {
         initNames.push(name);
     }
 
+    console.log("Names loaded through GoogleAPI");
     return initNames;
   } catch (error) {
       console.log('Error: ', error);
@@ -34,6 +35,7 @@ async function getSheetsdbNames() { //acts as a cache in case googleapi is down
       initNames.push(fullName);
     }
 
+    console.log("Names loaded through SheetsDB");
     return initNames;
   } catch (error) {
     console.error('Error fetching data:', error);
