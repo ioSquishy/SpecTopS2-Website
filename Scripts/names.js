@@ -1,76 +1,27 @@
-const backupNames = [
-  "Linda Hailey",
-  "Gary Pape",
-  "Carol Atkinson",
-  "Richard Barronian",
-  "Daryl Anderson",
-  "Sherrie Barrick",
-  "Joe Bell",
-  "David Berg",
-  "Steve Brebner",
-  "Ron Bredeson",
-  "Marty Buswell",
-  "Gary Cannell",
-  "Tim Cantor",
-  "Leslie Chapman",
-  "Dennis Cleveland",
-  "Dan Danielson",
-  "Eddie Duarte",
-  "Steve Estep",
-  "Jeffrey Evans",
-  "Lisa Falk",
-  "Debra Fant",
-  "Lee Fellenburg",
-  "Debra Frederick",
-  "Lybia Garrett",
-  "Mike Graham",
-  "Ken Grassi",
-  "Dana Hayden",
-  "Carl Heenan",
-  "Patrick Isakson",
-  "Diane Jarmon",
-  "Kerry Gade",
-  "Mark Kirpes",
-  "Ken Krona",
-  "Roger Kuhl",
-  "Michael Langdon",
-  "Danette Mandt",
-  "Richard Mason",
-  "Roy Mason",
-  "Roxy McClure",
-  "Rocky McGallian",
-  "Karen McKay",
-  "Deb Nelson",
-  "Dirk Post",
-  "Connie Ravers",
-  "Doug Richards",
-  "Kris Rosendahl",
-  "Sue Stevens",
-  "Sandy Stewart",
-  "Jo Streets",
-  "Theresa Thetford",
-  "Paulette Tropiano",
-  "Kathy Turnipseed",
-  "Bruce Walmer",
-  "Curt Wegner",
-  "Gail Wentworth",
-  "Donald Whiton",
-  "Sue Williams",
-  "Jim Willoughby",
-  "Paul Wilson",
-  "Joe Winski",
-  "Sue Yadon",
-  "Jackie Bjorkman",
-  "Rand Chiarovano",
-  "Richard Mead",
-  "Ramona Revis",
-  "Kaare Gimse",
-  "Lyle Pratt",
-  "Joe Jackson",
-  "Dorinda Klug",
-  "Roxann Russell"]
+async function getGoogleapiNames() {
+  const apiKey = 'AIzaSyB4M2ZdOF3vYj9eJEgRT6bWW5mAXSLhh3E';
+  const spreadsheetId = '1HJQmVQ1PkFNkMJ9npDVJhB63BtuwoNlkDUxWUic5Vn8';
 
-async function getNames() {
+  try {
+    const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/Sheet1?key=${apiKey}`);
+    const data = await response.json();
+    const values = data.values;
+    values.sort((a, b) => a[1].localeCompare(b[1]));
+    const initNames = [];
+
+    for (let nameIndex = 0; nameIndex < values.length; nameIndex++) {
+        let name = values[nameIndex][0] + " " + values[nameIndex][1];
+        initNames.push(name);
+    }
+
+    return initNames;
+  } catch (error) {
+      console.log('Error: ', error);
+      return await getSheetsdbNames();
+  }
+}
+
+async function getSheetsdbNames() { //acts as a cache in case googleapi is down
   var encodedFieldName = encodeURIComponent("Last Name");
   try {
     const response = await fetch('https://sheetdb.io/api/v1/m2c7w7xcwn3r0?sort_by=' + encodedFieldName + '&sort_order=asc');
@@ -86,12 +37,12 @@ async function getNames() {
     return initNames;
   } catch (error) {
     console.error('Error fetching data:', error);
-    return backupNames;
+    return ["Names could not be loaded."];
   }
 }
 
 async function displayNames() {
-  const names = await getNames();
+  const names = await getGoogleapiNames();
 
   var list1 = document.getElementById("namesList1");
   var list2 = document.getElementById("namesList2");
@@ -99,7 +50,7 @@ async function displayNames() {
   var list4 = document.getElementById("namesList4");
 
   var cols = 4;
-  var namesPerCol = (names.length / cols).toFixed(0);
+  var namesPerCol = Math.ceil(names.length / cols);
   //first col
   for (let i = 0; i < namesPerCol; i++) {
     list1.innerHTML += names[i] + "<br>";
