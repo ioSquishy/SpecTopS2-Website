@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS\css.css">  
     <link rel="stylesheet" href="CSS\form.css">
+    <link rel="stylesheet" href="CSS\photos.css">
   </head>
 
   <body class="body">
@@ -20,170 +21,27 @@
     </div>
     <!-- End Header Image -->
 
-    <!-- Information -->
-    <div class="container mx-auto mt-4">
-        <div class="row" style="text-align: center">
-          <!-- Intro -->
-          <p>The name of our school might have changed, but our school <strong><span style="color: red">SPIRIT</span></strong> remains!</p>
-          <br>
-          <p>Our <span style="color: red">50<sup>th</sup></span>- yes, I said our <span style="color: red">50<sup>th</sup> REUNION</span> is coming upon us, and we all need to get together, reconnect, celebrate, and feel the joy of meeting again with our old high school buddies.</p>
-          <!-- End Intro -->
-          <!-- Address -->
-          <div class="row my-5 mx-auto">
-            <div class="col-sm-12 my-auto" style="text-align: center;">
-              <p><strong>Date: September 16, 2023<br>Time: 5:30pm</strong></p>
-              <p><strong>Place: Fircrest Golf Club</strong><br><strong>1500 Regents Blvd</strong><br><strong>Fircrest, WA. 98466</strong></p>
-              <p>Dinner/Buffet<br>Casual Attire/Formal Wear/Jeans Okay</p>
-            </div>
-            <!-- Map Embed -->
-            <!--<div class="col-sm-6 my-auto" style="text-align: center">
-              <iframe class="address" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2709.1836434611246!2d-122.52558238458194!3d47.23255362173527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5491aac3bc891bb5%3A0xe6e1930b0f667eaf!2sFircrest%20Golf%20Club!5e0!3m2!1sen!2sus!4v1678321858441!5m2!1sen!2sus" height="300" width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>-->
-          </div>
-          <!-- End Address-->
-          <!-- Pricing -->
-          <div class="row mb-5 my-auto mx-auto">
-            <p><strong>Ticket Price <em>$73.00</em></strong></p>
-            <br>
-            <p>Checks should be made out to Wilson 1973 Reunion & mailed to:<strong><br>Wilson H.S.<br>c/o Lori Rohrs<br>2522 North Proctor Street #317<br>Tacoma, WA. 98406</strong></p>
-            <br><br>
-            <p>Remember to also include your maiden name.</p>
-          </div>
-          <!-- End Pricing -->
-          <!-- Contact -->
-          <div class="row mb-5 my-auto mx-auto">
-            <p style="margin-bottom: 10px;">If you would like to pay via Zelle, contact Debi Poe Dahl at <a href="mailto: Wilson.class73@gmail.com" target="_blank">Wilson.class73@gmail.com</a> for more information.</p>
-            <br>
-            <br><br>
-            <p><strong>Facebook: </strong><a href="https://www.facebook.com/groups/133306613496436" target="_blank">Wilson High School Reunion Group 1973</a></p>
-            <br>
-            <p>**We still need to find many of our classmates, <strong>so please spread the word.</strong> Direct them to our website or Facebook page, or please email us with contact information. We don't want anyone to miss out!</p>
-          </div>
-          <!-- End Contact -->
+    <div class="photos" id="photo_slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="Assets\ram.png">
         </div>
-    </div>
-    <!-- End Information -->
-
-    <!-- Sign Up Form -->
-    <div class="container">
-      <div class="row mb-5 my-auto mx-auto">
-        <div class="whiteBg" id="reservations-container">
-          <div class="form-box py-5" id="form-container">
-            <h1 id="title">Reunion Reservations</h1>
-            <form class="container-fluid" id="reservationForm">
-              <!-- Row 1 -->
-              <div class="row">
-                <!-- name -->
-                <div class="col-lg-5 mb-2 mx-auto">
-                  <div class="input-field" id="fNameField">
-                    <input type="text" placeholder="First Name" id="fName">
-                  </div>
-                </div>
-                <!-- last name -->
-                <div class="col-lg-5 mb-2 mx-auto">
-                  <div class="input-field" id="lNameField">
-                    <input type="text" placeholder="Last Name" id="lName">
-                  </div>
-                </div>
-              </div>
-              <!-- Row 2 -->
-              <div class="row">
-                <!-- maiden name -->
-                <div class="col-lg-5 mb-2 mx-auto">
-                  <div class="input-field" id="mNameField">
-                    <input type="text" placeholder="Maiden Name" id="mName">
-                  </div>
-                </div>
-                <!-- email -->
-                <div class="col-lg-5 mb-2 mx-auto">
-                  <div class="input-field" id="emailField">
-                    <input type="email" placeholder="Email" id="email">
-                  </div>
-                </div>
-              </div>
-              <!-- Row 3 -->
-              <div class="row">
-                <!-- phone -->
-                <div class="col-lg-5 mb-2 mx-auto">
-                  <div class="input-field" id="phoneField">
-                    <input type="tel" placeholder="Phone Number" id="phone">
-                  </div>
-                </div>
-                <!-- comments 
-                <div class="col-5 mb-2 mx-auto">
-                  <div class="long-input-field">
-                    <textarea placeholder="Comments" id="comments"></textarea>
-                  </div>
-                </div>-->
-              </div>
-              <!-- Button -->
-              <div class="row">
-                <div class="col-11 mb-3 mx-auto">
-                  <div class="btn-field">
-                    <button type="button" onclick="checkForm()">Submit</button>
-                    <!--<button type="button" onclick="testSubmit()">Test Submit</button>-->
-                  </div>
-                </div>
-              </div>
-              <!-- Adds button to switch to goolge sheets embed if something is not working after 2 attempts to submit -->
-              <template id="formNotWorkingTemplate">
-                <div class="row mt-0 mb-0">
-                  <div class="problemButton">
-                    <button class="btn" type="button" onclick="useFormEmbed()">Form not working?</button>
-                  </div>
-                </div>
-              </template>
-            </form>
-          </div>
-          <!-- Successfully Submitted -->
-          <template id="successTemplate">
-            <div class="success" style="text-align: center;">
-              <h1 class="py-5">Reservation Submitted!</h1>
-            </div>
-          </template>
-          <!-- Google Forms Embed (for backup) -->
-          <template id="formEmbedTemplate">
-            <div class="formEmbed" style="text-align: center;">
-              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdzmfrzFjc0P7Jh_IeSsx3JDt5tk_zX43FTUUPJTu7iVn9qZw/viewform?embedded=true" width="100%" height="1100" frameborder="0" marginheight="0" marginwidth="0">Loading Form…</iframe>
-            </div>
-          </template>
+        <div class="carousel-item">
+          <img src="Assets\lowQualityVersion.jpg">
+        </div>
+        <div class="carousel-item">
+          <img src="Assets\ram.png">
         </div>
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#photo_slide" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#photo_slide" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <!-- End Sign Up Form -->
-
-    <!-- Activities -->
-    <div class="container py-4" style="background-color: white; border-radius: 20px;">
-      <div class="row" style="text-align: center;">
-        <h1 style="color: #3c00a0;">Activities</h1>
-        <p style="font-size: large;">We are also planning the following activities if you are interested, please contact us at <a href="mailto: Wilson.class73@gmail.com" target="_blank">Wilson.class73@gmail.com</a></p>
-      </div>
-      <!-- activities -->
-      <div class="row">
-        <!-- golf -->
-        <div class="col my-2 mx-3 py-3 px-3 activity" style="min-width: 300px;">
-          <h4>Golf</h4>
-          <h5>September 15</h5>
-          <p>Join us for golf at Madrona Links Golf Course, Gig Harbor.</p>
-          <p>Contact: Rusty Hersey <a href="mailto: R.hersey@comcast.net" target="_blank">R.hersey@comcast.net</a></p>
-        </div>
-        <!-- picnic -->
-        <div class="col my-2 mx-3 py-3 px-3 activity" style="min-width: 300px;">
-          <h4>Picnic</h4>
-          <h5>September 17</h5>
-          <p>We have the all new & remodeled Owen Beach Picnic Shelter at Point Defiance reserved for all to enjoy! (5 mile drive is now dedicated to bikes and pedestrians only)</p>
-          <p>Contact: Scott Thompson <a href="mailto: sctmpsn@gmail.com" target="_blank">sctmpsn@gmail.com</a></p>
-        </div>
-        <!-- baseball -->
-        <div class="col my-2 mx-3 py-3 px-3 activity" style="min-width: 300px;">
-          <h4>Baseball</h4>
-          <h5>September 19</h5>
-          <p>Cheer with us at the Rainiers game at Cheney Stadium! Group Double Play deal! $20 bucks gets you a reserved seat, ballpark meal & limited edition Rainiers hat. We will need a minimum of 20 people to sign up for this deal, so let us know if you would like to attend a great Rainiers game!</p>
-          <p>Contact: Mike Baldassin <a href="mailto: baldy4160@gmail.com" target="_blank">baldy4160@gmail.com</a></p>
-        </div>
-      </div>
-    </div>
-    <!-- End Activities -->
 
     <!-- Memoriam -->
     <div class="container-fluid mt-5 mb-0 memoriamImg">
