@@ -30,8 +30,12 @@ const photos = [
 ];
 
 const currImg = document.getElementById("currImg");
+const photosContainer = document.getElementById("photosContainer");
+const slideBackground = document.getElementById("slideBackground");
+const currImgContainer = document.getElementById("currImgContainer");
 var currImgIndex = 0;
 var totalImgs = photos.length;
+var isFullscreen = false;
 
 function nextImg() {
     currImgIndex++;
@@ -42,13 +46,25 @@ function prevImg() {
     updateImg()
 }
 function updateImg() {
-    let newIndex = mod(currImgIndex, totalImgs);
-    currImg.src = photos[newIndex];
-    console.log(newIndex);
+    currImg.src = photos[mod(currImgIndex, totalImgs)];
+    // console.log(newIndex);
 }
 
 function mod(n, m) {
     return ((n % m) + m) % m;
+}
+
+function fullscreen() {
+    if (isFullscreen) {
+        photosContainer.className = "photosContainer mt-5";
+        slideBackground.className = "slideBackground";
+        currImgContainer.className = "currImg";
+    } else {
+        photosContainer.className = "fullPhotosContainer";
+        slideBackground.className = "fullSlideBackground";
+        currImgContainer.className = "fullCurrImg";
+    }
+    isFullscreen = !isFullscreen;
 }
 
 window.onload = updateImg();

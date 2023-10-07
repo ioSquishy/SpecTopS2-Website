@@ -21,23 +21,18 @@
     </div>
     <!-- End Header Image -->
 
-    <div class="photosContainer mt-5">
-      <div class="slideBackground">
-        <div class="prevImg">
-          <a href="#0">
-            <img src="Assets/leftArrow.svg" onclick="prevImg()">
-          </a>
-        </div>
-        <div class="currImg">
+    <!-- Photos -->
+    <div class="photosContainer mt-5" id="photosContainer">
+      <div class="slideBackground" id="slideBackground">
+        <img src="Assets/leftArrow.svg" onclick="prevImg()" id="prevImg">
+        <div class="currImg" id="currImgContainer">
           <img src="" id="currImg">
         </div>
-        <div class="nextImg">
-          <a href="#0">
-            <img src="Assets/rightArrow.svg" onclick="nextImg()">
-          </a>
-        </div>
+        <img src="Assets/rightArrow.svg" onclick="nextImg()" id="nextImg">
+        <img src="Assets/fsi.svg" onclick="fullscreen()" id="FSI">
       </div>
     </div>
+    <!-- End Photos -->
 
     <!-- Memoriam -->
     <div class="container-fluid mt-5 mb-0 memoriamImg">

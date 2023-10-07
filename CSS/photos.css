@@ -43,32 +43,16 @@
     transform: translate(-50%, -50%);
 }
 
-.prevImg {
-    /* background-color: red; */
-    position: absolute;
-    height: 100%;
-    width: 50%;
-    /* z-index: 2; */
-}
-
-.nextImg {
-    /* background-color: blue; */
-    position: absolute;
-    height: 100%;
-    width: 50%;
-    left: 50%;
-    /* z-index: 2; */
-}
-
-.prevImg img {
+#prevImg {
     position: absolute;
     top: 50%;
     height: 5vh;
     transform: translateY(-50%);
     z-index: 2;
-    left: 3%
+    left: 3%;
+    cursor: pointer;
 }
-.nextImg img {
+#nextImg {
     position: absolute;
     top: 50%;
     height: 5vh;
@@ -76,4 +60,49 @@
     z-index: 2;
     left: 97%;
     translate: -100%;
+    cursor: pointer;
+}
+#FSI {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    height: 5vh;
+    transform: translate(-150%, -150%);
+    cursor: pointer;
+}
+
+/* fullscreen */
+.fullPhotosContainer {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.fullSlideBackground {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.fullCurrImg {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+.fullCurrImg img {
+    position: absolute;
+    max-height: 100vh;
+    max-width: 100vw;
+
+    
+    left: 50%;
+    transform: translateX(-50%);
 }
