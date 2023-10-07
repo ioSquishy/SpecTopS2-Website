@@ -1,4 +1,79 @@
-.photos {
-    width: auto;
+.photosContainer {
+    width: 100vw;
     height: 90vh;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.slideBackground {
+    background-color: white;
+    position: absolute;
+    width: 80vw;
+    height: 90vh;
+    margin: 0;
+    padding: 0;
+    border-radius: 2vw;
+
+    left: 50%;
+    top: 50%;
+    margin-left: -40vw;
+    margin-top: -45vh;
+}
+
+.currImg {
+    position: absolute;
+    width: 70vw;
+    height: 80vh;
+
+    left: 50%;
+    top: 50%;
+    margin-left: -35vw;
+    margin-top: -40vh;
+    /* background-color: black; */
+}
+
+.currImg img {
+    position: absolute;
+    max-height: 80vh;
+    max-width: 70vw;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.prevImg {
+    /* background-color: red; */
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    /* z-index: 2; */
+}
+
+.nextImg {
+    /* background-color: blue; */
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    left: 50%;
+    /* z-index: 2; */
+}
+
+.prevImg img {
+    position: absolute;
+    top: 50%;
+    height: 5vh;
+    transform: translateY(-50%);
+    z-index: 2;
+    left: 3%
+}
+.nextImg img {
+    position: absolute;
+    top: 50%;
+    height: 5vh;
+    transform: translateY(-50%);
+    z-index: 2;
+    left: 97%;
+    translate: -100%;
 }

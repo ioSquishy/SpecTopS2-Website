@@ -21,26 +21,22 @@
     </div>
     <!-- End Header Image -->
 
-    <div class="photos" id="photo_slide">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="Assets\ram.png">
+    <div class="photosContainer mt-5">
+      <div class="slideBackground">
+        <div class="prevImg">
+          <a href="#0">
+            <img src="Assets/leftArrow.svg" onclick="prevImg()">
+          </a>
         </div>
-        <div class="carousel-item">
-          <img src="Assets\lowQualityVersion.jpg">
+        <div class="currImg">
+          <img src="" id="currImg">
         </div>
-        <div class="carousel-item">
-          <img src="Assets\ram.png">
+        <div class="nextImg">
+          <a href="#0">
+            <img src="Assets/rightArrow.svg" onclick="nextImg()">
+          </a>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#photo_slide" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#photo_slide" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
 
     <!-- Memoriam -->
@@ -76,6 +72,7 @@
     <script src="https://apis.google.com/js/api.js"></script>
     <script src="Scripts\form.js"></script>
     <script src="Scripts\names.js" defer></script>
+    <script src="Scripts\photos.js"></script>
   </body>
 
 </html>
