@@ -59,10 +59,12 @@ function fullscreen() {
         photosContainer.className = "photosContainer mt-5";
         slideBackground.className = "slideBackground";
         currImgContainer.className = "currImg";
+        contactInfo.hidden = false;
     } else {
         photosContainer.className = "fullPhotosContainer";
         slideBackground.className = "fullSlideBackground";
         currImgContainer.className = "fullCurrImg";
+        contactInfo.hidden = true;
     }
     isFullscreen = !isFullscreen;
 }
