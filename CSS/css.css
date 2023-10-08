@@ -54,6 +54,18 @@
     font-size: large;
 }
 
+/*contact info*/
+.contactInfo {
+    position: relative;
+    background-color: white;
+    height: fit-content;
+    width: 80vw;
+    left: 50%;
+    margin-left: -40vw;
+    padding: 50px;
+    border-radius: 2vw;
+}
+
 /* ghost debugging 
 * {
     background: #000 !important;
